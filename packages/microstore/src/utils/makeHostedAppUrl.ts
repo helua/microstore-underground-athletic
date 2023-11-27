@@ -36,8 +36,8 @@ const makeCheckoutUrl = ({
 }): URL =>
   new URL(
     `${orderId}`,
-    `https://${subdomain}.commercelayer.app/checkout/${orderId}`
+    `https://checkout.${subdomain}.pl/${orderId}`
   )
 
 const makeCartUrl = ({ orderId }: { orderId: string }): URL =>
-  new URL(`cart/${orderId}`, window.location.origin)
+  new URL(`https://cart.athletic-house.pl/${orderId}`, window.location.origin)
