@@ -42,7 +42,8 @@ function MicrostoreContainer({
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
-            return_url: returnUrl,
+            return_url: 'https://store.athletic-house.pl',
+            cart_url: 'https://cart.athletic-house.pl',
           }}
         >
           <Base>
