@@ -30,7 +30,8 @@ function MicrostoreContainer({
   }, [lang])
 
   const returnUrl = window.location.href
-  console.log(returnUrl)
+  const cartUrl =
+    "https://cart.athletic-house.pl/" + window.location.href.split("?")[1]
 
   return (
     <CommerceLayer
@@ -43,7 +44,8 @@ function MicrostoreContainer({
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
-            return_url: returnUrl
+            return_url: returnUrl,
+            cart_url: cartUrl
           }}
         >
           <Base>
