@@ -30,6 +30,7 @@ function MicrostoreContainer({
   }, [lang])
 
   const returnUrl = window.location.href
+  console.log(returnUrl)
 
   return (
     <CommerceLayer

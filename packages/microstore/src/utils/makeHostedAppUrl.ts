@@ -33,11 +33,7 @@ const makeCheckoutUrl = ({
 }: {
   subdomain: string
   orderId: string
-}): URL =>
-  new URL(
-    `${orderId}`,
-    `https://checkout.${subdomain}.pl/${orderId}`
-  )
+}): URL => new URL(`${orderId}`, `https://checkout.${subdomain}.pl/${orderId}`)
 
 const makeCartUrl = ({ orderId }: { orderId: string }): URL =>
   new URL(
