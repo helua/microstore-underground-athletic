@@ -40,4 +40,7 @@ const makeCheckoutUrl = ({
   )
 
 const makeCartUrl = ({ orderId }: { orderId: string }): URL =>
-  new URL(`https://cart.athletic-house.pl/${orderId}`, window.location.origin)
+  new URL(
+    `https://cart.athletic-house.pl/${orderId}`,
+    `https://cart.athletic-house.pl/${orderId}`
+  )
