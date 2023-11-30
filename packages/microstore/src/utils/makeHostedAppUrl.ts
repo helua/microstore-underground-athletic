@@ -20,19 +20,14 @@ export const makeHostedAppUrl = (options: MakeHostedAppUrlConfig) => {
 
   const url =
     hostedApp === "checkout"
-      ? makeCheckoutUrl({ orderId, subdomain: options.subdomain })
+      ? makeCheckoutUrl({ orderId })
       : makeCartUrl({ orderId })
 
   url.searchParams.set("accessToken", accessToken)
   return url.toString()
 }
 
-const makeCheckoutUrl = ({
-  orderId,
-}: {
-  subdomain: string
-  orderId: string
-}): URL =>
+const makeCheckoutUrl = ({ orderId }: { orderId: string }): URL =>
   new URL(`${orderId}`, `https://checkout.athletic-house.pl/${orderId}`)
 
 const makeCartUrl = ({ orderId }: { orderId: string }): URL =>
