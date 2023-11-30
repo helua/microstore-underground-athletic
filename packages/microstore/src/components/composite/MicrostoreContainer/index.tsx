@@ -31,7 +31,7 @@ function MicrostoreContainer({
     i18n.changeLanguage(lang)
   }, [lang])
 
-  const returnUrl = window.location.href
+  const returnUrl = "www"
   // eslint-disable-next-line prettier/prettier
 
   const cartUrl = returnUrl
