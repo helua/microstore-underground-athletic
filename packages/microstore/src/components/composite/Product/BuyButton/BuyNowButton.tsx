@@ -20,7 +20,7 @@ export const BuyNowButton: FC<Props> = ({
   return (
     <StyledAddToCartButton
       data-test-id="button-buy-now"
-      buyNowMode
+      buyNowMode={true}
       checkoutUrl="checkout.athletic-house.pl"
       skuCode={skuCode}
       quantity={`${quantity}`}
