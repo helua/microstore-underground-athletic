@@ -28,16 +28,12 @@ export const makeHostedAppUrl = (options: MakeHostedAppUrlConfig) => {
 }
 
 const makeCheckoutUrl = ({
-  subdomain,
   orderId,
 }: {
   subdomain: string
   orderId: string
 }): URL =>
-  new URL(
-    `${orderId}`,
-    `https://checkout.${subdomain}.pl/${orderId}`
-  )
+  new URL(`${orderId}`, `https://checkout.athletic-house.pl/${orderId}`)
 
 const makeCartUrl = ({ orderId }: { orderId: string }): URL =>
-  new URL(`https://cart.athletic-house.pl/${orderId}`, window.location.origin)
+  new URL(`${orderId}`, `https://cart.athletic-house.pl/${orderId}`)

@@ -11,6 +11,8 @@ import { Base } from "#components/ui/Base"
 import { Container } from "#components/ui/Container"
 import { Footer } from "#components/ui/Footer"
 import { useDataFromUrl } from "#hooks/useDataFromUrl"
+import { getOrCreateOrderId } from "#utils/getOrCreateOrderId"
+import { SkuWithQuantity } from "@typings/urlData"
 interface Props {
   settings: Settings
   couponCode?: string
@@ -30,8 +32,14 @@ function MicrostoreContainer({
   }, [lang])
 
   const returnUrl = window.location.href
-  const cartUrl =
-    "https://cart.athletic-house.pl/" + window.location.href.split("?")[1]
+  // eslint-disable-next-line prettier/prettier
+
+  const cartUrl = returnUrl
+    .replace(
+      "https://store.athletic-house.pl/",
+      "https://cart.athletic-house.pl/"
+    )
+    .replace("list/yRXZIexAdn", ":orderId")
 
   return (
     <CommerceLayer
@@ -45,7 +53,7 @@ function MicrostoreContainer({
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl
+            cart_url: cartUrl,
           }}
         >
           <Base>
