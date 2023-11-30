@@ -54,7 +54,6 @@ function MicrostoreContainer({
             coupon_code: couponCode,
             return_url: returnUrl,
             cart_url: cartUrl,
-            checkout_url: cartUrl,
           }}
         >
           <Base>
