@@ -23,8 +23,8 @@ export const AddInlineButton: FC<Props> = ({
   const { addToCart } = useOrderContainer()
   return (
     <StyledAddToCartButton
-      redirectToHostedCart
-      hostedCartUrl="cart.athletic-house.pl"
+      // redirectToHostedCart
+      // hostedCartUrl="cart.athletic-house.pl"
     >
       {({ ...rest }) => {
         return (

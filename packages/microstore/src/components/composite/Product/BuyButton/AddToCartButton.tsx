@@ -23,6 +23,7 @@ export const AddToCartButton: FC<Props> = ({
       label={t("buttons.addToCart")}
       quantity={`${quantity}`}
       redirectToHostedCart
+      hostedCartUrl="cart.athletic-house.pl"
       skuCode={skuCode}
       lineItem={{ name }}
       disabled={disabled}
