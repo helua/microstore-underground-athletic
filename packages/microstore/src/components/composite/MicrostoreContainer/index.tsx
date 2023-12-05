@@ -53,7 +53,10 @@ function MicrostoreContainer({
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl.replace("orderId", window.localStorage.orderId),
+            cart_url: cartUrl.replace(
+              "orderId",
+              window.localStorage.persistKey
+            ),
           }}
         >
           <Base>
