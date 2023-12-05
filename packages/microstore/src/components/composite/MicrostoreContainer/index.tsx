@@ -35,8 +35,7 @@ function MicrostoreContainer({
 
   const returnUrl = window.location.href
   // eslint-disable-next-line prettier/prettier
-  let orderId = "";
-  console.log("localStorage" + orderId)
+  let orderId: string = "";
   
   const cartUrl = returnUrl
     .replace(
@@ -52,8 +51,8 @@ function MicrostoreContainer({
       <GlobalStylesProvider primaryColor={settings.primaryColor} />
       <OrderStorage persistKey={`cl:${settings.slug}:orderId`}>
         <OrderContainer
-          // fetchOrder={(order) => console.log("fetchOrder" + order.id)}
           fetchOrder={(order) => (orderId = order.id)}
+          // fetchOrder={(order) => console.log(order.id)}
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
