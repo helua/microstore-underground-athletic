@@ -35,8 +35,9 @@ function MicrostoreContainer({
 
   const returnUrl = window.location.href
   // eslint-disable-next-line prettier/prettier
-  const orderId = localStorage.persistKey
+  var orderId = localStorage.persistKey
   console.log("localStorage" + orderId)
+  
   const cartUrl = returnUrl
     .replace(
       "https://store.athletic-house.pl/",
@@ -51,12 +52,13 @@ function MicrostoreContainer({
       <GlobalStylesProvider primaryColor={settings.primaryColor} />
       <OrderStorage persistKey={`cl:${settings.slug}:orderId`}>
         <OrderContainer
-          fetchOrder={(order) => console.log("fetchOrder" + order.id)}
+          // fetchOrder={(order) => console.log("fetchOrder" + order.id)}
+          fetchOrder={(order) => (orderId = order.id)}
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl.replace("orderId", "orderId"),
+            cart_url: cartUrl.replace("orderId", orderId),
           }}
         >
           <Base>
