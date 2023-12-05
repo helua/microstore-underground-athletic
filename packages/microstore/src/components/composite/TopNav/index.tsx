@@ -25,6 +25,7 @@ export const TopNav: FC<Props> = ({ logoUrl, companyName, showCartIcon }) => {
             <CartLinkStyled
               data-test-id="link-view-cart"
               customDomain="cart.athletic-house.pl"
+              type="mini"
               label={
                 <>
                   <CartIcon />

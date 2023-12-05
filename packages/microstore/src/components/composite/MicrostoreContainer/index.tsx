@@ -27,8 +27,7 @@ function MicrostoreContainer({
 }: Props): JSX.Element {
   const { cart, lang } = useDataFromUrl()
   const { i18n } = useTranslation()
-  // const { order } = useOrderContainer()
-
+  console.log(order)
   useEffect(() => {
     i18n.changeLanguage(lang)
   }, [lang])
@@ -40,23 +39,24 @@ function MicrostoreContainer({
       "https://store.athletic-house.pl/",
       "https://cart.athletic-house.pl/"
     )
-    .replace("list/yRXZIexAdn", "orderId")
+    .replace("list/yRXZIexAdn", "orderId");
+  const { order } = useOrderContainer()
+  let orderId: any = order?.id
+  
   return (
     <CommerceLayer
       accessToken={settings.accessToken}
       endpoint={settings.endpoint}
     >
       <GlobalStylesProvider primaryColor={settings.primaryColor} />
-      {/* <OrderStorage persistKey={`cl:${settings.slug}:orderId`}> */}
       <OrderStorage persistKey={`cl:${settings.slug}:orderId`}>
         <OrderContainer
-          // fetchOrder={(order) => cartUrl.replace("orderId", order.id)}
-          fetchOrder={(order) => console.log(order.id)}
+          fetchOrder={(order) => (orderId = order.id)}
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl.replace("orderId", `cl:${settings.slug}:orderId`),
+            cart_url: cartUrl.replace("orderId", orderId),
           }}
         >
           <Base>
