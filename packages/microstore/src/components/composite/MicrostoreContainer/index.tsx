@@ -34,9 +34,7 @@ function MicrostoreContainer({
   }, [lang])
 
   const returnUrl = window.location.href
-  // eslint-disable-next-line prettier/prettier
-  let orderId: string = "";
-  
+  // eslint-disable-next-line prettier/prettier 
   const cartUrl = returnUrl
     .replace(
       "https://store.athletic-house.pl/",
@@ -51,13 +49,13 @@ function MicrostoreContainer({
       <GlobalStylesProvider primaryColor={settings.primaryColor} />
       <OrderStorage persistKey={`cl:${settings.slug}:orderId`}>
         <OrderContainer
-          fetchOrder={(order) => (orderId = order.id)}
+          fetchOrder={(order) => cartUrl.replace("orderId", order.id)}
           // fetchOrder={(order) => console.log(order.id)}
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl.replace("orderId", orderId),
+            cart_url: cartUrl,
           }}
         >
           <Base>
