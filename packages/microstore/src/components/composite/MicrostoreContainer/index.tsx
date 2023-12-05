@@ -27,7 +27,6 @@ function MicrostoreContainer({
 }: Props): JSX.Element {
   const { cart, lang } = useDataFromUrl()
   const { i18n } = useTranslation()
-  console.log(order)
   useEffect(() => {
     i18n.changeLanguage(lang)
   }, [lang])
@@ -41,6 +40,7 @@ function MicrostoreContainer({
     )
     .replace("list/yRXZIexAdn", "orderId");
   const { order } = useOrderContainer()
+  console.log(order)
   let orderId: any = order?.id
   
   return (
