@@ -35,7 +35,7 @@ function MicrostoreContainer({
 
   const returnUrl = window.location.href
   // eslint-disable-next-line prettier/prettier
-  var orderId = localStorage.persistKey
+  let orderId = "";
   console.log("localStorage" + orderId)
   
   const cartUrl = returnUrl
