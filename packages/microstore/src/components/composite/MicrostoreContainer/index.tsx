@@ -1,4 +1,5 @@
 import { CommerceLayer } from "@commercelayer/react-components/auth/CommerceLayer"
+import { useOrderContainer } from "@commercelayer/react-components/hooks/useOrderContainer"
 import { OrderContainer } from "@commercelayer/react-components/orders/OrderContainer"
 import { OrderStorage } from "@commercelayer/react-components/orders/OrderStorage"
 import { GlobalStylesProvider } from "@commercelayer/react-utils"
@@ -11,6 +12,7 @@ import { Base } from "#components/ui/Base"
 import { Container } from "#components/ui/Container"
 import { Footer } from "#components/ui/Footer"
 import { useDataFromUrl } from "#hooks/useDataFromUrl"
+
 
 interface Props {
   settings: Settings
@@ -25,6 +27,7 @@ function MicrostoreContainer({
 }: Props): JSX.Element {
   const { cart, lang } = useDataFromUrl()
   const { i18n } = useTranslation()
+  // const { order } = useOrderContainer()
 
   useEffect(() => {
     i18n.changeLanguage(lang)
@@ -32,15 +35,14 @@ function MicrostoreContainer({
 
   const returnUrl = window.location.href
   // eslint-disable-next-line prettier/prettier
-  // const orderId = localStorage.getItem("orderId")
-
+  const orderId = localStorage.persistKey
+  console.log("localStorage" + orderId)
   const cartUrl = returnUrl
     .replace(
       "https://store.athletic-house.pl/",
       "https://cart.athletic-house.pl/"
     )
     .replace("list/yRXZIexAdn", "orderId")
-
   return (
     <CommerceLayer
       accessToken={settings.accessToken}
@@ -49,14 +51,12 @@ function MicrostoreContainer({
       <GlobalStylesProvider primaryColor={settings.primaryColor} />
       <OrderStorage persistKey={`cl:${settings.slug}:orderId`}>
         <OrderContainer
+          fetchOrder={(order) => console.log("fetchOrder" + order.id)}
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl.replace(
-              "orderId",
-              window.localStorage.persistKey
-            ),
+            cart_url: cartUrl.replace("orderId", "orderId"),
           }}
         >
           <Base>

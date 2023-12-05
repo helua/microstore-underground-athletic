@@ -53,7 +53,7 @@
     "**/*.tsx",
     "public/config*.js",
     ".eslintrc.cjs"
-  ],
+, "../../public/config.local.js"  ],
   "exclude": [
     "node_modules"
   ]
