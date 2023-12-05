@@ -47,15 +47,16 @@ function MicrostoreContainer({
       endpoint={settings.endpoint}
     >
       <GlobalStylesProvider primaryColor={settings.primaryColor} />
+      {/* <OrderStorage persistKey={`cl:${settings.slug}:orderId`}> */}
       <OrderStorage persistKey={`cl:${settings.slug}:orderId`}>
         <OrderContainer
-          fetchOrder={(order) => cartUrl.replace("orderId", order.id)}
-          // fetchOrder={(order) => console.log(order.id)}
+          // fetchOrder={(order) => cartUrl.replace("orderId", order.id)}
+          fetchOrder={(order) => console.log(order.id)}
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl,
+            cart_url: cartUrl.replace("orderId", `cl:${settings.slug}:orderId`),
           }}
         >
           <Base>
