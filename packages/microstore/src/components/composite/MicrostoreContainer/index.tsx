@@ -33,16 +33,22 @@ function MicrostoreContainer({
 
   const returnUrl = window.location.href
   // eslint-disable-next-line prettier/prettier 
+
+  let orderId = window.localStorage.getItem("orderId") || "";
   const cartUrl = returnUrl
     .replace(
       "https://store.athletic-house.pl/",
       "https://cart.athletic-house.pl/"
     )
-    .replace("list/yRXZIexAdn", "orderId");
-  const { order } = useOrderContainer()
-  console.log(order)
-  let orderId: any = order?.id
-  
+    .replace("list/yRXZIexAdn", orderId);
+  /*
+          const { order } = useOrderContainer()
+
+          // orderId={useOrderContainer().order?.id}
+          // console.log(order)
+          // let orderId: any = order?.id
+          // fetchOrder={(order) => (orderId = order.id)}
+          */
   return (
     <CommerceLayer
       accessToken={settings.accessToken}
@@ -56,7 +62,7 @@ function MicrostoreContainer({
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl.replace("orderId", orderId),
+            cart_url: cartUrl,
           }}
         >
           <Base>
