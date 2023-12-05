@@ -22,10 +22,7 @@ export const AddInlineButton: FC<Props> = ({
   const { t } = useTranslation()
   const { addToCart } = useOrderContainer()
   return (
-    <StyledAddToCartButton
-      // redirectToHostedCart
-      // hostedCartUrl="cart.athletic-house.pl"
-    >
+    <StyledAddToCartButton>
       {({ ...rest }) => {
         return (
           <button
