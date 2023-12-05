@@ -34,14 +34,15 @@ function MicrostoreContainer({
   const returnUrl = window.location.href
   // eslint-disable-next-line prettier/prettier 
 
-  let orderId = window.localStorage.getItem("orderId") || "";
-  const cartUrl = returnUrl
+  const orderId = window.localStorage.getItem("orderId");
+  console.log(orderId);
+  /*  const cartUrl = returnUrl
     .replace(
       "https://store.athletic-house.pl/",
       "https://cart.athletic-house.pl/"
     )
     .replace("list/yRXZIexAdn", orderId);
-  /*
+
           const { order } = useOrderContainer()
 
           // orderId={useOrderContainer().order?.id}
@@ -57,12 +58,12 @@ function MicrostoreContainer({
       <GlobalStylesProvider primaryColor={settings.primaryColor} />
       <OrderStorage persistKey={`cl:${settings.slug}:orderId`}>
         <OrderContainer
-          fetchOrder={(order) => (orderId = order.id)}
+          fetchOrder={(order) => console.log(order)}
           attributes={{
             language_code: lang,
             coupon_code: couponCode,
             return_url: returnUrl,
-            cart_url: cartUrl,
+            // cart_url: cartUrl,
           }}
         >
           <Base>
