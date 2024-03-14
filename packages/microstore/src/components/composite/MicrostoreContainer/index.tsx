@@ -36,20 +36,7 @@ function MicrostoreContainer({
 
   const orderId = window.localStorage.getItem("orderId");
   console.log(orderId);
-  /*  const cartUrl = returnUrl
-    .replace(
-      "https://store.athletic-house.pl/",
-      "https://cart.athletic-house.pl/"
-    )
-    .replace("list/yRXZIexAdn", orderId);
 
-          const { order } = useOrderContainer()
-
-          // orderId={useOrderContainer().order?.id}
-          // console.log(order)
-          // let orderId: any = order?.id
-          // fetchOrder={(order) => (orderId = order.id)}
-          */
   return (
     <CommerceLayer
       accessToken={settings.accessToken}

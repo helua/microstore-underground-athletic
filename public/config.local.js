@@ -1,4 +1,4 @@
 window.clAppConfig = {
   domain: "commercelayer.io",
-  selfHostedSlug: "fairtouch",
+  selfHostedSlug: "athletic-house",
 }
