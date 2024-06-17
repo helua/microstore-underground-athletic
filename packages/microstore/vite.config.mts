@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react"
 import { visualizer } from "rollup-plugin-visualizer"
-import { loadEnv, PluginOption } from "vite"
+import { loadEnv } from "vite"
 import { defineConfig } from "vitest/config"
 
 import { resolve } from "path"
@@ -54,7 +54,7 @@ export default defineConfig(({ mode }) => {
 })
 
 function preparePlugins({ analyzeBundle }: { analyzeBundle: boolean }) {
-  const plugins: PluginOption[] = [
+  const plugins = [
     react({
       babel: {
         plugins: ["babel-plugin-macros", "babel-plugin-styled-components"],
