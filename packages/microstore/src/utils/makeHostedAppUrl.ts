@@ -28,7 +28,7 @@ export const makeHostedAppUrl = (options: MakeHostedAppUrlConfig) => {
 }
 
 const makeCheckoutUrl = ({ orderId }: { orderId: string }): URL =>
-  new URL(`${orderId}`, `https://checkout.athletic-house.pl/${orderId}`)
+  new URL(`${orderId}`, `https://fairtouch-checkout.netlify.app/${orderId}`)
 
 const makeCartUrl = ({ orderId }: { orderId: string }): URL =>
-  new URL(`${orderId}`, `https://cart.athletic-house.pl/${orderId}`)
+  new URL(`${orderId}`, `https://fairtouch-cart.netlify.app/${orderId}`)

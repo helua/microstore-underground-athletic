@@ -24,7 +24,7 @@ export const TopNav: FC<Props> = ({ logoUrl, companyName, showCartIcon }) => {
           {showCartIcon ? (
             <CartLinkStyled
               data-test-id="link-view-cart"
-              customDomain="cart.athletic-house.pl"
+              customDomain="fairtouch-cart.netlify.app"
               label={
                 <>
                   <CartIcon />

@@ -23,7 +23,7 @@ export const AddToCartButton: FC<Props> = ({
       label={t("buttons.addToCart")}
       quantity={`${quantity}`}
       redirectToHostedCart
-      hostedCartUrl="cart.athletic-house.pl"
+      hostedCartUrl="fairtouch-cart.netlify.app"
       skuCode={skuCode}
       lineItem={{ name }}
       disabled={disabled}

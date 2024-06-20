@@ -21,7 +21,7 @@ export const BuyNowButton: FC<Props> = ({
     <StyledAddToCartButton
       data-test-id="button-buy-now"
       buyNowMode
-      checkoutUrl="https://checkout.athletic-house.pl"
+      checkoutUrl="https://fairtouch-checkout.netlify.app"
       skuCode={skuCode}
       quantity={`${quantity}`}
       lineItem={{ name }}
