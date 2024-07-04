@@ -32,10 +32,15 @@ export const TopNav: FC<Props> = ({
             <CartLinkStyled
               data-test-id="link-view-cart"
 <<<<<<< HEAD
+<<<<<<< HEAD
               customDomain="cart.athletic-house.pl"
 =======
               {...(openMiniCart() && inline ? { type: "mini" } : {})}
 >>>>>>> 96c995932777565de2c18946f0e3054f3fcbdb25
+=======
+              customDomain="cart.athletic-house.pl"
+              {...(openMiniCart() && inline ? { type: "mini" } : {})}
+>>>>>>> 5ef1542575f5a876fe5ccb68a0490821687c5bfa
               label={
                 <>
                   <CartIcon />
