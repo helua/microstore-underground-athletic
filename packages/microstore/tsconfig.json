@@ -18,7 +18,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -52,9 +52,14 @@
     "**/*.ts",
     "**/*.tsx",
     "public/config*.js",
+<<<<<<< HEAD
     ".eslintrc.cjs"
 , "../../public/config.local.js"  ],
+=======
+    ".eslintrc.cjs",
+    "vite.config.mts"],
+>>>>>>> 96c995932777565de2c18946f0e3054f3fcbdb25
   "exclude": [
-    "node_modules"
+    "node_modules",
   ]
 }
