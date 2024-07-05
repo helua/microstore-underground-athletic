@@ -47,7 +47,7 @@ export async function getSkusWithQuantity({
   itemsLimit?: number
 }): Promise<SkuWithQuantity[]> {
   const pageSize = (
-    itemsLimit <= 12 ? itemsLimit : 30
+    itemsLimit <= 40 ? itemsLimit : 12
   ) as QueryParamsList["pageSize"]
   if (skuList.manual === true) {
     const items = await cl.sku_lists.sku_list_items(skuList.id, {
