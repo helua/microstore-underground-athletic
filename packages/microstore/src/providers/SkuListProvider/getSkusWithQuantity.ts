@@ -40,14 +40,14 @@ const skuFields = {
 export async function getSkusWithQuantity({
   skuList,
   cl,
-  itemsLimit = 22,
+  itemsLimit = 25,
 }: {
   skuList: SkuList
   cl: CommerceLayerClient
   itemsLimit?: number
 }): Promise<SkuWithQuantity[]> {
   const pageSize = (
-    itemsLimit <= 22 ? itemsLimit : 22
+    itemsLimit <= 25 ? itemsLimit : 25
   ) as QueryParamsList["pageSize"]
   if (skuList.manual === true) {
     const items = await cl.sku_lists.sku_list_items(skuList.id, {
