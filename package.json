@@ -32,7 +32,10 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^7.4.2",
-    "npm-check-updates": "^16.14.6"
+    "lerna": "^8.1.5",
+    "npm-check-updates": "^16.14.20"
+  },
+  "resolutions": {
+    "braces": "^3.0.3"
   }
 }
