@@ -47,6 +47,7 @@ function SkuListPage(): JSX.Element {
         }
 
         if (skuList.isError || !skuList.data) {
+          console.log(skuList);
           return (
             <ErrorContainer
               errorCode="Error"
