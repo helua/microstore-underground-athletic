@@ -8,7 +8,6 @@ import { Nav, Badge, CartLinkStyled } from "./styled"
 import { Container } from "#components/ui/Container"
 import { Header } from "#components/ui/Header"
 import { Logo } from "#components/ui/Logo"
-import { openMiniCart } from "#utils/openMiniCart"
 
 type Props = {
   logoUrl: string | undefined | null
@@ -31,6 +30,7 @@ export const TopNav: FC<Props> = ({
           {showCartIcon ? (
             <CartLinkStyled
               data-test-id="link-view-cart"
+              customDomain="fairtouch-cart.netlify.app"
               label={
                 <>
                   <CartIcon />
