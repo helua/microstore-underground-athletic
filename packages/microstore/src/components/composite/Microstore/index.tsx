@@ -42,6 +42,7 @@ export const Microstore = ({ skus = [], skuList, couponCode }: Props) => {
     <>
       <HostedCart
         type="mini"
+        customDomain="fairtouch-cart.netlify.app"
         openAdd={openMiniCart()}
         style={{
           container: {
